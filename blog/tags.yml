@@ -1,0 +1,14 @@
+announcement:
+  label: Announcements
+  permalink: /announcement
+  description: Company and product announcements
+
+cybersecurity:
+  label: Cybersecurity
+  permalink: /cybersecurity
+  description: General cybersecurity insights and trends
+
+deception-technology:
+  label: Deception Technology
+  permalink: /deception-technology  
+  description: Cyber deception, honeytokens, and active defense

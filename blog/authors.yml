@@ -1,0 +1,9 @@
+mine2:
+  name: Mine2 Team
+  title: Cyber Deception Experts
+  url: https://mine2.io
+  image_url: /img/logo.png
+  email: info@mine2.io
+  page: true
+  socials:
+    linkedin: mine2-technologies
