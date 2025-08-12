@@ -1,231 +1,812 @@
 /**
  * Mine2Tech Blog Custom Styles
- * Matching brand colors and typography from main website
+ * Fully matching the main website design system for seamless integration
  */
 
-/* Import Inter font to match main site */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* Import fonts to match main site exactly */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-/* Brand Colors - Match main website */
+@font-face {
+  font-family: 'ShareTech';
+  src: url('/static/fonts/ShareTech-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Complete Brand Color System - Match main website exactly */
 :root {
-  --ifm-color-primary: #3fb2cd;
-  --ifm-color-primary-dark: #2a7a8e;
-  --ifm-color-primary-darker: #237189;
-  --ifm-color-primary-darkest: #1e5d72;
-  --ifm-color-primary-light: #54c1d7;
-  --ifm-color-primary-lighter: #65c8dd;
-  --ifm-color-primary-lightest: #87d4e8;
+  /* Primary Color System */
+  --ifm-color-primary: #3FB2CD;
+  --ifm-color-primary-dark: #2B8BA0;
+  --ifm-color-primary-darker: #1f7a8f;
+  --ifm-color-primary-darkest: #165b6b;
+  --ifm-color-primary-light: #5FC4D9;
+  --ifm-color-primary-lighter: #70cade;
+  --ifm-color-primary-lightest: #92d6e7;
   
-  /* Typography - Match main website */
-  --ifm-font-family-base: 'Inter', sans-serif;
-  --ifm-font-family-monospace: 'Inter', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  /* Mine2 Brand Colors - Exact Match */
+  --mine2-primary-black: #0A0A0B;
+  --mine2-primary-dark: #1A1A1C;
+  --mine2-primary-cyan: #3FB2CD;
+  --mine2-cyan-light: #5FC4D9;
+  --mine2-cyan-dark: #2B8BA0;
+  --mine2-orange: #FF6B00;
+  --mine2-text-primary: #FFFFFF;
+  --mine2-text-secondary: #A3A3A3;
+  --mine2-border-primary: #2A2A2C;
+  
+  /* Typography System */
+  --ifm-font-family-base: 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif';
+  --ifm-font-family-monospace: 'ShareTech', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  --ifm-heading-font-family: 'ShareTech', monospace;
+  
+  /* Typography Sizes - Match main site */
+  --ifm-h1-font-size: 48px;
+  --ifm-h2-font-size: 36px;
+  --ifm-h3-font-size: 28px;
+  --ifm-h4-font-size: 24px;
+  --ifm-line-height-base: 1.6;
+  
+  /* Spacing System */
+  --ifm-spacing-horizontal: 20px;
+  --ifm-spacing-vertical: 60px;
   
   /* Code styling */
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(63, 178, 205, 0.1);
   
-  /* Background colors to match website */
-  --ifm-background-color: #f8f9fa;
-  --ifm-navbar-background-color: rgba(35, 35, 35, 0.85);
-  --ifm-footer-background-color: #1a1a1a;
+  /* Light theme overrides */
+  --ifm-background-color: var(--mine2-primary-black);
+  --ifm-background-surface-color: var(--mine2-primary-dark);
+  --ifm-navbar-background-color: rgba(10, 10, 11, 0.95);
+  --ifm-footer-background-color: var(--mine2-primary-black);
+  --ifm-color-content: var(--mine2-text-primary);
+  --ifm-color-content-secondary: var(--mine2-text-secondary);
+  --ifm-color-emphasis-200: var(--mine2-border-primary);
+  --ifm-color-emphasis-300: var(--mine2-text-secondary);
+  --ifm-toc-border-color: var(--mine2-border-primary);
+  --ifm-blockquote-border-left-color: var(--mine2-primary-cyan);
 }
 
-/* Dark theme adjustments */
+/* Dark theme - Primary theme matching main website */
 [data-theme='dark'] {
-  --ifm-color-primary: #3fb2cd;
-  --ifm-color-primary-dark: #54c1d7;
-  --ifm-color-primary-darker: #65c8dd;
-  --ifm-color-primary-darkest: #87d4e8;
-  --ifm-color-primary-light: #2a7a8e;
-  --ifm-color-primary-lighter: #237189;
-  --ifm-color-primary-lightest: #1e5d72;
-  --docusaurus-highlighted-code-line-bg: rgba(63, 178, 205, 0.3);
+  /* Use same color system as main site */
+  --ifm-color-primary: var(--mine2-primary-cyan);
+  --ifm-color-primary-dark: var(--mine2-cyan-dark);
+  --ifm-color-primary-darker: #1f7a8f;
+  --ifm-color-primary-darkest: #165b6b;
+  --ifm-color-primary-light: var(--mine2-cyan-light);
+  --ifm-color-primary-lighter: #70cade;
+  --ifm-color-primary-lightest: #92d6e7;
+  --docusaurus-highlighted-code-line-bg: rgba(63, 178, 205, 0.2);
   
-  /* Fix dark theme visibility with better contrast */
-  --ifm-background-color: #1b1b1d !important;
-  --ifm-background-surface-color: #242426 !important;
-  --ifm-color-content: #ffffff !important;
-  --ifm-color-content-secondary: rgba(255, 255, 255, 0.8) !important;
-  /* Enhanced navbar background with better separation */
-  --ifm-navbar-background-color: rgba(36, 36, 38, 0.98) !important;
-  --ifm-footer-background-color: #1b1b1d !important;
+  /* Exact match to main website colors */
+  --ifm-background-color: var(--mine2-primary-black) !important;
+  --ifm-background-surface-color: var(--mine2-primary-dark) !important;
+  --ifm-color-content: var(--mine2-text-primary) !important;
+  --ifm-color-content-secondary: var(--mine2-text-secondary) !important;
+  --ifm-navbar-background-color: rgba(10, 10, 11, 0.95) !important;
+  --ifm-footer-background-color: var(--mine2-primary-black) !important;
+  --ifm-color-emphasis-200: var(--mine2-border-primary);
+  --ifm-color-emphasis-300: var(--mine2-text-secondary);
+  --ifm-toc-border-color: var(--mine2-border-primary);
+  --ifm-hr-border-color: var(--mine2-border-primary);
+  --ifm-table-border-color: var(--mine2-border-primary);
+  --ifm-blockquote-border-left-color: var(--mine2-primary-cyan);
+  
+  /* Cards and surfaces */
+  --ifm-card-background-color: var(--mine2-primary-dark);
+  --ifm-card-border-radius: 12px;
 }
 
-/* Ensure dark theme text visibility */
-[data-theme='dark'] .markdown h1, 
-[data-theme='dark'] .markdown h2, 
-[data-theme='dark'] .markdown h3 {
-  color: var(--ifm-color-primary) !important;
+/* Force dark theme as default - blog should always be dark to match main site */
+html {
+  color-scheme: dark !important;
 }
 
-[data-theme='dark'] .markdown p,
-[data-theme='dark'] .markdown li,
-[data-theme='dark'] .markdown span {
-  color: var(--ifm-color-content) !important;
+body {
+  background-color: var(--mine2-primary-black) !important;
+  color: var(--mine2-text-primary) !important;
+  font-family: var(--ifm-font-family-base) !important;
+  line-height: var(--ifm-line-height-base);
 }
 
-[data-theme='dark'] .navbar__title,
-[data-theme='dark'] .navbar__link {
-  color: white !important;
+/* ========================================
+   TYPOGRAPHY SYSTEM - Match Main Website
+   ======================================== */
+
+/* Headings with ShareTech font like main site */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'ShareTech', monospace !important;
+  font-weight: normal !important;
+  color: var(--mine2-text-primary) !important;
 }
 
-/* Custom styling for navbar to match main site */
-.navbar {
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
-  transition: all 0.3s ease;
-  background: var(--ifm-navbar-background-color) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Enhanced dark theme navbar separation */
-[data-theme='dark'] .navbar {
-  border-bottom: 1px solid rgba(63, 178, 205, 0.2);
-  box-shadow: 
-    0 1px 6px 0 rgba(0, 0, 0, 0.3),
-    0 1px 0 0 rgba(63, 178, 205, 0.1);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-.navbar__logo img {
-  max-width: 100px;
-  height: auto;
-}
-
-.navbar__brand {
-  margin-left: 1rem; /* Move logo slightly to the right */
-}
-
-.navbar__title {
-  font-weight: 600;
-  color: white !important;
-  margin-right: 2rem;
-}
-
-/* Fix navbar items alignment and spacing */
-.navbar__items {
-  gap: 1rem;
-}
-
-.navbar__items--left {
-  margin-left: 2rem; /* Add spacing from logo */
-}
-
-.navbar__link {
-  font-weight: 500;
-  transition: all 0.3s ease;
-  color: white !important; /* Fix inactive menu color */
-  padding: 0.5rem 1rem !important;
-  border-radius: 4px;
-}
-
-.navbar__link:hover {
-  color: var(--ifm-color-primary) !important;
-  background-color: rgba(63, 178, 205, 0.1);
-}
-
-.navbar__link--active {
-  color: var(--ifm-color-primary) !important;
-  font-weight: 600;
-}
-
-/* Blog post styling */
-.markdown h1, .markdown h2, .markdown h3 {
-  color: var(--ifm-color-primary-darker);
-}
-
-.blog-list-page .margin-bottom--lg {
+h1 {
+  font-size: 48px !important;
+  line-height: 56px !important;
   margin-bottom: 2rem !important;
 }
 
-/* Footer adjustments */
-.footer {
-  background-color: var(--ifm-footer-background-color) !important;
+h2 {
+  font-size: 36px !important;
+  line-height: 44px !important;
+  margin-bottom: 1.5rem !important;
 }
 
-.footer__title {
-  color: var(--ifm-color-primary) !important;
-  font-weight: 600;
+h3 {
+  font-size: 28px !important;
+  line-height: 36px !important;
+  margin-bottom: 1rem !important;
 }
 
-/* Tag styling */
+/* Content typography */
+.markdown h1, .markdown h2, .markdown h3, .markdown h4 {
+  color: var(--mine2-primary-cyan) !important;
+  font-family: 'ShareTech', monospace !important;
+}
+
+.markdown p, .markdown li, .markdown span {
+  color: var(--mine2-text-primary) !important;
+  line-height: 1.6 !important;
+}
+
+.markdown a {
+  color: var(--mine2-primary-cyan) !important;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.markdown a:hover {
+  color: var(--mine2-cyan-light) !important;
+}
+
+/* ========================================
+   NAVBAR - Glass Effect Like Main Site
+   ======================================== */
+
+.navbar {
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 
+    0 1px 6px 0 rgba(0, 0, 0, 0.3),
+    0 1px 0 0 rgba(63, 178, 205, 0.1) !important;
+  transition: all 0.3s ease !important;
+  background: var(--ifm-navbar-background-color) !important;
+  border-bottom: 1px solid var(--mine2-border-primary) !important;
+  padding: 1rem 0 !important;
+}
+
+/* Navbar styling to match main site */
+.navbar__logo img {
+  max-width: 120px !important;
+  height: auto !important;
+}
+
+.navbar__brand {
+  margin-left: 1rem !important;
+}
+
+.navbar__title {
+  font-family: 'ShareTech', monospace !important;
+  font-weight: normal !important;
+  color: var(--mine2-text-primary) !important;
+  font-size: 1.5rem !important;
+  margin-right: 2rem !important;
+}
+
+.navbar__items {
+  gap: 0.5rem !important;
+}
+
+.navbar__items--left {
+  margin-left: 2rem !important;
+}
+
+.navbar__link {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  color: var(--mine2-text-primary) !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 6px !important;
+  position: relative !important;
+}
+
+.navbar__link:hover {
+  color: var(--mine2-primary-cyan) !important;
+  background-color: rgba(63, 178, 205, 0.1) !important;
+  transform: translateY(-1px) !important;
+}
+
+.navbar__link--active {
+  color: var(--mine2-primary-cyan) !important;
+  font-weight: 600 !important;
+  background-color: rgba(63, 178, 205, 0.15) !important;
+}
+
+/* ========================================
+   BLOG CARDS LAYOUT - Match Main Website
+   ======================================== */
+
+/* Container styling */
+.blog-list-page .container {
+  max-width: 1200px !important;
+  padding: 0 2rem !important;
+}
+
+.blog-list-page .margin-bottom--lg {
+  margin-bottom: 1.5rem !important;
+}
+
+/* Main content area */
+.main-wrapper {
+  min-height: 100vh !important;
+  background: var(--mine2-primary-black) !important;
+  padding-top: 2rem !important;
+}
+
+/* Individual blog post cards - Match main site card system */
+.blog-list-page article {
+  background: var(--mine2-primary-dark) !important;
+  border: 1px solid var(--mine2-border-primary) !important;
+  border-radius: 12px !important;
+  padding: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.2),
+    0 1px 0 0 rgba(63, 178, 205, 0.05) !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.blog-list-page article::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--mine2-primary-cyan), var(--mine2-cyan-light));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.blog-list-page article:hover {
+  border-color: var(--mine2-primary-cyan) !important;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 2px 0 0 rgba(63, 178, 205, 0.2) !important;
+  transform: translateY(-2px) !important;
+}
+
+.blog-list-page article:hover::before {
+  opacity: 1;
+}
+
+/* Blog post titles */
+.blog-list-page article h1 {
+  font-family: 'ShareTech', monospace !important;
+  color: var(--mine2-text-primary) !important;
+  font-size: 2rem !important;
+  margin-bottom: 1rem !important;
+  transition: color 0.3s ease !important;
+}
+
+.blog-list-page article:hover h1 {
+  color: var(--mine2-primary-cyan) !important;
+}
+
+/* Blog post content */
+.blog-list-page article p {
+  color: var(--mine2-text-secondary) !important;
+  line-height: 1.6 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Author and meta information */
+.blog-list-page .avatar {
+  margin-right: 1rem !important;
+}
+
+.blog-list-page .avatar__name {
+  color: var(--mine2-text-primary) !important;
+  font-weight: 600 !important;
+}
+
+.blog-list-page .avatar__subtitle {
+  color: var(--mine2-text-secondary) !important;
+}
+
+/* Read more link styling */
+.blog-list-page article a[href*="read-more"] {
+  color: var(--mine2-primary-cyan) !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+}
+
+.blog-list-page article a[href*="read-more"]:hover {
+  color: var(--mine2-cyan-light) !important;
+  transform: translateX(4px) !important;
+}
+
+/* ========================================
+   TAGS SYSTEM - Enhanced Visual Design
+   ======================================== */
+
 .badge {
-  background-color: var(--ifm-color-primary);
-  color: white;
+  background: linear-gradient(135deg, var(--mine2-primary-cyan), var(--mine2-cyan-light)) !important;
+  color: var(--mine2-primary-black) !important;
+  font-weight: 600 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 20px !important;
+  font-size: 0.875rem !important;
+  border: none !important;
+  transition: all 0.3s ease !important;
+  margin: 0.25rem !important;
 }
 
 .badge:hover {
-  background-color: var(--ifm-color-primary-dark);
-  text-decoration: none;
+  background: linear-gradient(135deg, var(--mine2-cyan-light), var(--mine2-primary-cyan)) !important;
+  transform: translateY(-1px) scale(1.05) !important;
+  box-shadow: 0 4px 12px rgba(63, 178, 205, 0.3) !important;
+  text-decoration: none !important;
 }
 
-/* Additional improvements for better consistency */
-.blog-wrapper,
-.main-wrapper {
-  min-height: 100vh;
+/* ========================================
+   FOOTER - Match Main Site Style
+   ======================================== */
+
+.footer {
+  background: var(--mine2-primary-black) !important;
+  border-top: 1px solid var(--mine2-border-primary) !important;
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
 }
 
-/* Sidebar styling improvements */
+.footer__title {
+  color: var(--mine2-primary-cyan) !important;
+  font-family: 'ShareTech', monospace !important;
+  font-weight: normal !important;
+  font-size: 1.25rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.footer__item a {
+  color: var(--mine2-text-secondary) !important;
+  transition: color 0.3s ease !important;
+}
+
+.footer__item a:hover {
+  color: var(--mine2-primary-cyan) !important;
+  text-decoration: none !important;
+}
+
+.footer__copyright {
+  color: var(--mine2-text-secondary) !important;
+  text-align: center !important;
+  margin-top: 2rem !important;
+  padding-top: 2rem !important;
+  border-top: 1px solid var(--mine2-border-primary) !important;
+}
+
+/* ========================================
+   SIDEBAR - Enhanced Visual Design
+   ======================================== */
+
+.theme-blog-sidebar-item {
+  background: var(--mine2-primary-dark) !important;
+  border: 1px solid var(--mine2-border-primary) !important;
+  border-radius: 8px !important;
+  padding: 1rem !important;
+  margin-bottom: 1rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.theme-blog-sidebar-item:hover {
+  border-color: var(--mine2-primary-cyan) !important;
+  background: rgba(63, 178, 205, 0.05) !important;
+  transform: translateX(4px) !important;
+}
+
 .theme-blog-sidebar-item-title {
-  color: var(--ifm-color-primary) !important;
-  font-weight: 600;
+  color: var(--mine2-primary-cyan) !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  margin-bottom: 0.5rem !important;
 }
 
-[data-theme='dark'] .theme-blog-sidebar-item-title {
-  color: var(--ifm-color-primary) !important;
+/* ========================================
+   CLEAN HEADER NAVIGATION - UX OPTIMIZED
+   ======================================== */
+
+/* Remove external link arrows globally - cleaner UX */
+.navbar__link[target="_blank"]::after,
+.navbar__item .navbar__link[href*="http"]::after {
+  display: none !important;
 }
 
-/* Better responsive navbar */
+/* Style the Main Site link - subtle, non-distracting */
+.navbar-main-site-link {
+  color: var(--mine2-text-secondary) !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+}
+
+.navbar-main-site-link:hover {
+  color: var(--mine2-primary-cyan) !important;
+  background-color: rgba(63, 178, 205, 0.1) !important;
+}
+
+.navbar-main-site-link::before {
+  content: '←';
+  margin-right: 0.5rem !important;
+  opacity: 0 !important;
+  transform: translateX(4px) !important;
+  transition: all 0.3s ease !important;
+}
+
+.navbar-main-site-link:hover::before {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+/* Primary CTA Button - Clear visual hierarchy */
+.header-cta-button {
+  background: linear-gradient(135deg, var(--mine2-primary-cyan), var(--mine2-cyan-light)) !important;
+  color: var(--mine2-primary-black) !important;
+  font-weight: 600 !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 8px !important;
+  border: none !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  box-shadow: 0 2px 8px rgba(63, 178, 205, 0.2) !important;
+}
+
+.header-cta-button:hover {
+  background: linear-gradient(135deg, var(--mine2-cyan-light), var(--mine2-primary-cyan)) !important;
+  color: var(--mine2-primary-black) !important;
+  transform: translateY(-1px) scale(1.02) !important;
+  box-shadow: 0 6px 20px rgba(63, 178, 205, 0.4) !important;
+  text-decoration: none !important;
+}
+
+.header-cta-button::before {
+  content: '📅';
+  margin-right: 0.25rem;
+}
+
+/* Clean spacing for focused navigation */
+.navbar__items--left .navbar__item:not(:last-child) {
+  margin-right: 1.5rem !important;
+}
+
+.navbar__items--right {
+  margin-left: 2rem !important;
+}
+
+/* ========================================
+   ENHANCED FOOTER WITH SOCIAL LINKS
+   ======================================== */
+
+/* Add social media section to footer */
+.footer {
+  position: relative !important;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--mine2-primary-cyan), transparent);
+}
+
+/* Enhanced footer links styling */
+.footer__links {
+  margin-bottom: 3rem !important;
+}
+
+.footer__item {
+  margin-bottom: 0.75rem !important;
+}
+
+.footer__link-item {
+  padding: 0.5rem 0 !important;
+  border-radius: 4px !important;
+  transition: all 0.3s ease !important;
+}
+
+.footer__link-item:hover {
+  background-color: rgba(63, 178, 205, 0.1) !important;
+  padding-left: 0.5rem !important;
+}
+
+/* Add visual separation */
+.footer__bottom {
+  border-top: 2px solid var(--mine2-border-primary) !important;
+  background: rgba(10, 10, 11, 0.8) !important;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
 @media (max-width: 996px) {
   .navbar__items--left {
-    margin-left: 0;
+    margin-left: 0 !important;
   }
   
   .navbar__link {
-    padding: 0.5rem !important;
+    padding: 0.75rem 0.5rem !important;
+  }
+  
+  .blog-list-page article {
+    padding: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  h1 {
+    font-size: 32px !important;
+    line-height: 40px !important;
+  }
+  
+  h2 {
+    font-size: 28px !important;
+    line-height: 36px !important;
   }
 }
 
-/* Fix any remaining color issues in dark mode */
-[data-theme='dark'] {
-  color-scheme: dark;
+@media (max-width: 768px) {
+  .blog-list-page .container {
+    padding: 0 1rem !important;
+  }
+  
+  .blog-list-page article {
+    padding: 1rem !important;
+  }
 }
 
-[data-theme='dark'] .blog-list-page article {
-  background-color: var(--ifm-background-surface-color) !important;
-  border: 1px solid rgba(63, 178, 205, 0.15);
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
+/* ========================================
+   BLOG DETAILS PAGE - ENHANCED DESIGN
+   ======================================== */
+
+/* Main article container - Optimize for reading (BLOG DETAILS ONLY) */
+.blog-wrapper:not(.blog-list-page) article,
+.blog-wrapper:not(.blog-list-page) .container article {
+  background: var(--mine2-primary-dark) !important;
+  border: 1px solid var(--mine2-border-primary) !important;
+  border-radius: 16px !important;
+  padding: 3rem !important;
+  margin: 2rem auto !important;
+  max-width: 800px !important;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 2px 0 0 rgba(63, 178, 205, 0.1) !important;
+  position: relative !important;
+  overflow: hidden !important;
 }
 
-[data-theme='dark'] .blog-list-page article:hover {
-  border-color: rgba(63, 178, 205, 0.3);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transform: translateY(-1px);
+.blog-wrapper:not(.blog-list-page) article::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--mine2-primary-cyan), var(--mine2-cyan-light), var(--mine2-orange));
 }
 
-/* Enhanced content separation for better visual hierarchy */
-[data-theme='dark'] .main-wrapper {
-  border-top: 1px solid rgba(63, 178, 205, 0.1);
-  margin-top: 0;
+/* Blog post header styling (BLOG DETAILS ONLY) */
+.blog-wrapper:not(.blog-list-page) .container article header {
+  margin-bottom: 3rem !important;
+  padding-bottom: 2rem !important;
+  border-bottom: 1px solid var(--mine2-border-primary) !important;
+  position: relative !important;
 }
 
-/* Improve sidebar visibility in dark mode */
-[data-theme='dark'] .theme-blog-sidebar-item {
-  background-color: rgba(36, 36, 38, 0.5);
-  border-radius: 6px;
-  padding: 0.75rem;
-  margin-bottom: 0.5rem;
-  border-left: 3px solid transparent;
-  transition: all 0.3s ease;
+/* Blog title - Hero style (BLOG DETAILS ONLY) */
+.blog-wrapper:not(.blog-list-page) article h1 {
+  font-family: 'ShareTech', monospace !important;
+  font-size: 3rem !important;
+  line-height: 1.2 !important;
+  color: var(--mine2-text-primary) !important;
+  margin-bottom: 1.5rem !important;
+  background: linear-gradient(135deg, var(--mine2-text-primary), var(--mine2-primary-cyan));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-[data-theme='dark'] .theme-blog-sidebar-item:hover {
-  background-color: rgba(63, 178, 205, 0.1);
-  border-left-color: var(--ifm-color-primary);
+/* Blog metadata (BLOG DETAILS ONLY) */
+.blog-wrapper:not(.blog-list-page) article .margin-bottom--sm,
+.blog-wrapper:not(.blog-list-page) article .margin-vert--md {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  color: var(--mine2-text-secondary) !important;
+  font-size: 0.95rem !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Author info styling (BLOG DETAILS ONLY) */
+.blog-wrapper:not(.blog-list-page) .avatar {
+  display: flex !important;
+  align-items: center !important;
+  background: rgba(63, 178, 205, 0.1) !important;
+  padding: 1rem !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(63, 178, 205, 0.2) !important;
+  margin-bottom: 2rem !important;
+}
+
+.blog-wrapper:not(.blog-list-page) .avatar__photo {
+  border: 2px solid var(--mine2-primary-cyan) !important;
+  border-radius: 50% !important;
+}
+
+.blog-wrapper:not(.blog-list-page) .avatar__name {
+  color: var(--mine2-text-primary) !important;
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+}
+
+.blog-wrapper:not(.blog-list-page) .avatar__subtitle {
+  color: var(--mine2-text-secondary) !important;
+  font-style: italic !important;
+}
+
+/* Content sections */
+.blog-wrapper article .markdown h2 {
+  font-family: 'ShareTech', monospace !important;
+  font-size: 2.5rem !important;
+  color: var(--mine2-primary-cyan) !important;
+  margin-top: 3rem !important;
+  margin-bottom: 1.5rem !important;
+  padding-left: 1rem !important;
+  border-left: 4px solid var(--mine2-primary-cyan) !important;
+  position: relative !important;
+}
+
+.blog-wrapper article .markdown h3 {
+  font-family: 'ShareTech', monospace !important;
+  font-size: 2rem !important;
+  color: var(--mine2-cyan-light) !important;
+  margin-top: 2.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Enhanced content styling */
+.blog-wrapper article .markdown p {
+  font-size: 1.125rem !important;
+  line-height: 1.8 !important;
+  color: var(--mine2-text-primary) !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.blog-wrapper article .markdown ul,
+.blog-wrapper article .markdown ol {
+  margin-bottom: 2rem !important;
+  padding-left: 1.5rem !important;
+}
+
+.blog-wrapper article .markdown li {
+  font-size: 1.125rem !important;
+  line-height: 1.7 !important;
+  color: var(--mine2-text-primary) !important;
+  margin-bottom: 0.75rem !important;
+  position: relative !important;
+}
+
+.blog-wrapper article .markdown li strong {
+  color: var(--mine2-primary-cyan) !important;
+  font-weight: 600 !important;
+}
+
+/* Links within content */
+.blog-wrapper article .markdown a {
+  color: var(--mine2-primary-cyan) !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid transparent !important;
+  transition: all 0.3s ease !important;
+}
+
+.blog-wrapper article .markdown a:hover {
+  color: var(--mine2-cyan-light) !important;
+  border-bottom-color: var(--mine2-cyan-light) !important;
+}
+
+/* Call-to-action at the end */
+.blog-wrapper article .markdown p:last-of-type {
+  background: rgba(63, 178, 205, 0.1) !important;
+  border: 1px solid rgba(63, 178, 205, 0.2) !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  margin-top: 3rem !important;
+  font-style: italic !important;
+  text-align: center !important;
+}
+
+/* Blog tags styling */
+.blog-wrapper .margin-bottom--lg .badge {
+  background: linear-gradient(135deg, var(--mine2-primary-cyan), var(--mine2-cyan-light)) !important;
+  color: var(--mine2-primary-black) !important;
+  font-weight: 600 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 20px !important;
+  font-size: 0.875rem !important;
+  border: none !important;
+  margin: 0.25rem 0.5rem 0.25rem 0 !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Back to blog link */
+.blog-wrapper .margin-bottom--lg a[href="/"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  background: rgba(63, 178, 205, 0.1) !important;
+  border: 1px solid rgba(63, 178, 205, 0.2) !important;
+  color: var(--mine2-primary-cyan) !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  margin-bottom: 2rem !important;
+}
+
+.blog-wrapper .margin-bottom--lg a[href="/"]:hover {
+  background: rgba(63, 178, 205, 0.2) !important;
+  transform: translateX(-4px) !important;
+}
+
+.blog-wrapper .margin-bottom--lg a[href="/"]::before {
+  content: '←';
+  margin-right: 0.5rem;
+}
+
+/* Responsive design for blog details */
+@media (max-width: 996px) {
+  .blog-wrapper article,
+  .blog-wrapper .container article {
+    padding: 2rem !important;
+    margin: 1rem !important;
+  }
+  
+  .blog-wrapper article h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  .blog-wrapper article .markdown h2 {
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-wrapper article,
+  .blog-wrapper .container article {
+    padding: 1.5rem !important;
+    margin: 0.5rem !important;
+    border-radius: 12px !important;
+  }
+  
+  .blog-wrapper article h1 {
+    font-size: 2rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  .blog-wrapper article .markdown p,
+  .blog-wrapper article .markdown li {
+    font-size: 1rem !important;
+  }
 }

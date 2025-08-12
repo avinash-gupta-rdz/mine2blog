@@ -60,6 +60,20 @@ const config: Config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
+          createSitemapItems: async (params) => {
+            const {defaultCreateSitemapItems, ...rest} = params;
+            const items = await defaultCreateSitemapItems(rest);
+            return items.filter((item) => {
+              // Include all blog posts and main pages
+              return !item.url.includes('/tags/');
+            });
+          },
+        },
       } satisfies Preset.Options,
     ],
   ],
@@ -69,27 +83,34 @@ const config: Config = {
     image: 'img/docusaurus-social-card.jpg',
     colorMode: {
       defaultMode: 'dark',
-      disableSwitch: false,
+      disableSwitch: true, // Force dark theme to match main site
       respectPrefersColorScheme: false,
     },
     navbar: {
-      title: '',
+      title: 'BLOG',
       logo: {
         alt: 'Mine2 Logo',
         src: 'img/logo.png',
       },
       items: [
+        // Blog-specific navigation - Clean & Focused
         {to: '/', label: 'All Posts', position: 'left'},
         {to: '/tags', label: 'Tags', position: 'left'},
+        
+        // Essential external links only - No arrows, clean design
         {
           href: 'https://mine2.io',
           label: 'Main Site',
-          position: 'right',
+          position: 'left',
+          className: 'navbar-main-site-link',
         },
+        
+        // Single primary CTA - Clear visual hierarchy
         {
-          href: 'https://mine2.io/contact',
-          label: 'Contact',
+          href: 'https://mine2.io/demo',
+          label: 'Book Demo',
           position: 'right',
+          className: 'header-cta-button',
         },
       ],
     },
@@ -97,36 +118,65 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Mine2',
+          title: 'Product',
           items: [
             {
-              label: 'Main Website',
-              href: 'https://mine2.io',
+              label: 'Digital Mines',
+              href: 'https://mine2.io/solutions',
             },
             {
-              label: 'About Us',
-              href: 'https://mine2.io/about',
+              label: 'Mine2 Fortify',
+              href: 'https://mine2.io/solutions',
             },
             {
-              label: 'Services',
-              href: 'https://mine2.io/product',
+              label: 'Mine2 Mate',
+              href: 'https://mine2.io/solutions',
+            },
+            {
+              label: 'Integrations',
+              href: 'https://mine2.io/solutions',
             },
           ],
         },
         {
-          title: 'Connect',
+          title: 'Company',
           items: [
             {
-              label: 'Contact Us',
-              href: 'https://mine2.io/contact',
+              label: 'About Us',
+              href: 'https://mine2.io/company/about',
             },
             {
               label: 'Careers',
-              href: 'https://mine2.io/career',
+              href: 'https://mine2.io/careers',
             },
             {
-              label: 'LinkedIn',
-              href: 'https://linkedin.com/company/mine2-technologies',
+              label: 'Contact',
+              href: 'https://mine2.io/contact',
+            },
+            {
+              label: 'Blog',
+              to: '/',
+            },
+          ],
+        },
+        {
+          title: 'Legal',
+          items: [
+            {
+              label: 'Terms of Service',
+              href: 'https://mine2.io/terms',
+            },
+            {
+              label: 'Privacy Policy',
+              href: 'https://mine2.io/privacy',
+            },
+            {
+              label: 'FAQ',
+              href: 'https://mine2.io/faq',
+            },
+            {
+              label: 'Security',
+              href: 'https://mine2.io/security-assessment',
             },
           ],
         },
@@ -148,7 +198,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Mine2. All rights reserved.`,
+      copyright: `Copyright © ${new Date().getFullYear()} MINE2 Technologies, Inc. All rights reserved.`,
     },
     prism: {
       theme: prismThemes.github,
